@@ -1,0 +1,9 @@
+{
+  "name": "recodable",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "react-static": "^7.4.2"
+  }
+}
