@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "dev": "lerna run dev --stream",
+    "build": "lerna run build --stream"
+  },
   "devDependencies": {
+    "lerna": "^3.22.1",
     "react-static": "^7.4.2"
   }
 }
