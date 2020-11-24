@@ -1,28 +1,27 @@
 {
   "name": "@recodable/website",
-  "prettier": "@recodable/prettier-config",
   "scripts": {
-    "dev": "yarn start",
-    "start": "react-static start",
+    "dev": "react-static start",
     "stage": "react-static build --staging",
     "build": "react-static build",
     "analyze": "react-static build --analyze",
-    "serve": "serve dist -p 3000",
-    "deploy": "netlify deploy",
-    "format": "prettier --write '**/*.{ts,js,css,html}'"
+    "serve": "serve dist -p 3000"
   },
   "dependencies": {
-    "@reach/router": "^1.2.1",
+    "autoprefixer": "^9",
     "axios": "^0.19.0",
+    "postcss": "^7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-static": "^7.2.0",
-    "react-static-plugin-reach-router": "^7.2.0",
+    "react-static-plugin-react-router": "^7.4.2",
     "react-static-plugin-sitemap": "^7.2.0",
-    "react-static-plugin-source-filesystem": "^7.2.0"
+    "react-static-plugin-source-filesystem": "^7.2.0",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "devDependencies": {
-    "@recodable/prettier-config": "^0.0.1",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.1.0",
     "eslint-config-react-app": "^5.0.1",
@@ -32,8 +31,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^4.0.2",
-    "netlify-cli": "^2.68.5",
-    "prettier": "^2.1.2",
     "serve": "^11.1.0"
   }
 }

@@ -1,14 +1,16 @@
 {
   "name": "recodable",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "version": "0.0.0",
+  "prettier": "@recodable/prettier-config",
   "scripts": {
     "dev": "lerna run dev --stream",
-    "build": "lerna run build --stream"
+    "build": "lerna run build --stream",
+    "format": "prettier --write '**/*.{ts,tsx,js,jsx,css,html}'"
   },
   "devDependencies": {
+    "@recodable/prettier-config": "./packages/prettier-config",
     "lerna": "^3.22.1",
+    "prettier": "^2.2.0",
     "react-static": "^7.4.2"
   }
 }
