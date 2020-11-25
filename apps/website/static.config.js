@@ -1,6 +1,9 @@
 import path from 'path';
 
 export default {
+  getSiteData: () => ({
+    title: 'Recodable - independant development team',
+  }),
   getRoutes: async () => {
     return [];
   },
