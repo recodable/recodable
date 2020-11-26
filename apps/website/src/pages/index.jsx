@@ -63,7 +63,7 @@ export default () => {
         </div>
       </Container>
 
-      <Container>
+      {/* <Container>
         <h2
           className="py-10 text-5xl font-semibold text-gray-700 rounded-lg"
           style={{ fontFamily: "'Kanit', sans-serif" }}
@@ -75,7 +75,7 @@ export default () => {
           We create our app in the open
           <br />& are proud contributors of the Open Source ecosystem
         </p>
-      </Container>
+      </Container> */}
 
       <Container>
         <div className="text-center">
@@ -93,9 +93,9 @@ export default () => {
   );
 };
 
-function Container({ children }) {
+function Container({ className, children, ...forwardedProps }) {
   return (
-    <div className="bg-gray-100 relative overflow-hidden pb-24">
+    <div className={`bg-gray-100 relative overflow-hidden pb-24 ${className}`} {...forwardedProps}>
       <div className="mx-auto" style={{ width: '1024px' }}>
         {children}
       </div>
