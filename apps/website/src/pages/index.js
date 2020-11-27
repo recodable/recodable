@@ -51,9 +51,7 @@ export default () => {
 
         <div className="text-center py-16">
           <Link to="/blog">
-            <a>
-              <Button>Read more stories</Button>
-            </a>
+            <Button>Read more stories</Button>
           </Link>
         </div>
       </Container>

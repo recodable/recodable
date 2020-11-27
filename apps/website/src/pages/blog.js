@@ -41,14 +41,16 @@ export default () => {
           </div>
         </div>
 
-        <div className="mt-6 pt-10 grid gap-16">
-          {posts.map((post) => {
-            return <Blogpost {...post} />;
-          })}
+        <div>
+          <div className="mt-6 pt-10 grid gap-16">
+            {posts.map((post) => {
+              return <Blogpost {...post} />;
+            })}
+          </div>
 
-          <button type="button">
-            <Button>Load more stories</Button>
-          </button>
+          <div className="mt-10 text-center">
+            <Button type="button">Load more stories</Button>
+          </div>
         </div>
       </div>
     </div>
