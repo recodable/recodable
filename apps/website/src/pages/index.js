@@ -3,6 +3,7 @@ import Blogpost from '../components/Blogpost';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { useRouteData } from 'react-static';
+import StackList from '../components/StackList';
 
 export default () => {
   const { posts } = useRouteData();
@@ -28,6 +29,8 @@ export default () => {
             <br />
             beautiful web and mobile products for amazing clients.
           </p>
+
+          <StackList />
         </div>
 
         <Pattern className="bottom-0 left-0" />
@@ -43,7 +46,7 @@ export default () => {
 
         <ol className="grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
           {posts.map((post) => (
-            <li>
+            <li key={post.slug}>
               <Blogpost {...post} />
             </li>
           ))}
