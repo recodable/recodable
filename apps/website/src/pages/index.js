@@ -72,14 +72,28 @@ export default () => {
 
       <Container>
         <div className="text-center">
-          <p className="text-gray-700 text-3xl mb-4">Let's talk!</p>
+          <div>
+            <h2
+              className="py-4 text-5xl font-semibold text-gray-700 rounded-lg"
+              style={{ fontFamily: "'Kanit', sans-serif" }}
+            >
+              Write us a message.
+            </h2>
 
-          <a
-            href="mailto:hello@recodable.io"
-            className="text-gray-700 text-5xl font-bold"
-          >
-            hello@recodable.io
-          </a>
+            <p className="text-gray-500 text-xl">
+              Let's talk about how Recodable can help your next project get to
+              the next level.
+            </p>
+          </div>
+
+          <div className="py-16">
+            <a
+              href="mailto:hello@recodable.io"
+              className="text-gray-700 hover:text-gray-500 text-5xl font-bold"
+            >
+              hello@recodable.io
+            </a>
+          </div>
         </div>
       </Container>
     </>
