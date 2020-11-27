@@ -2,8 +2,11 @@ import React from 'react';
 import Blogpost from '../components/Blogpost';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
+import { useRouteData } from 'react-static';
 
 export default () => {
+  const { posts } = useRouteData();
+
   return (
     <>
       <Container>
@@ -39,21 +42,11 @@ export default () => {
         </h2>
 
         <ol className="grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
-          <li>
-            <Blogpost />
-          </li>
-
-          <li>
-            <Blogpost />
-          </li>
-
-          <li>
-            <Blogpost />
-          </li>
-
-          <li>
-            <Blogpost />
-          </li>
+          {posts.map((post) => (
+            <li>
+              <Blogpost {...post} />
+            </li>
+          ))}
         </ol>
 
         <div className="text-center py-16">

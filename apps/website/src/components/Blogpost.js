@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { format } from 'date-fns';
 
-export default function Blogpost({ title, description, slug }) {
+export default function Blogpost({ title, description, slug, publishedAt }) {
   return (
     <div>
       <p className="text-sm text-gray-500">
-        <time dateTime="2020-03-16">Mar 16, 2020</time>
+        <time dateTime={publishedAt}>
+          {format(new Date(publishedAt), 'MMM d, y')}
+        </time>
       </p>
       <Link to={`/blog/${slug}`}>
         <a className="mt-2 block">
