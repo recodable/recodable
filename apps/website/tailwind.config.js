@@ -4,7 +4,11 @@ module.exports = {
   purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.css'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    colors,
+    colors: {
+      ...colors,
+      primary: '#4075D6',
+      accent: colors.orange,
+    },
     extend: {},
   },
   variants: {

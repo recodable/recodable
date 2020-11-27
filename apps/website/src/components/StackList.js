@@ -36,8 +36,8 @@ function StackList() {
   const selectedItem = !!selected ? selected : items[current];
 
   return (
-    <div className="flex items-center">
-      <ul className="bg-gray-100 rounded-lg px-4 py-2 flex">
+    <div className="bg-white rounded-lg flex items-center">
+      <ul className="px-4 py-2 flex">
         {items.map((item) => {
           const { IconComponent } = item;
           return (
@@ -57,7 +57,7 @@ function StackList() {
 
       <span className="font-light text-gray-500">
         We ❤️ to work with{' '}
-        <span className="font-medium">{selectedItem.name}</span>
+        <span className="font-medium text-primary">{selectedItem.name}</span>
       </span>
     </div>
   );

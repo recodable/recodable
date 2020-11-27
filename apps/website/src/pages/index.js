@@ -5,6 +5,23 @@ import Button from '../components/Button';
 import { useRouteData } from 'react-static';
 import StackList from '../components/StackList';
 
+function Dotify({ children, size = 15, className = '' }) {
+  return (
+    <span className={`flex items-baseline ${className}`}>
+      {children}
+
+      <span
+        style={{
+          width: `${size}px`,
+          height: `${size}px`,
+          marginLeft: `${Math.round(size / 10)}px`,
+        }}
+        className="bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"
+      />
+    </span>
+  );
+}
+
 export default () => {
   const { posts } = useRouteData();
 
@@ -15,16 +32,17 @@ export default () => {
 
         <div className="relative py-32 px-20 z-10 flex flex-col items-start">
           <h1
-            className="text-8xl font-extrabold mb-6 text-gray-700 bg-gray-100 rounded-lg"
-            style={{ fontFamily: "'Kanit', sans-serif" }}
+            className="bg-white text-8xl font-extrabold mb-6 text-gray-700 rounded-lg px-4 py-2"
+            style={{ fontFamily: "'Roboto', sans-serif" }}
           >
             We are
             <br />
-            <span>Recodable</span>
-            <span>.</span>
+            <Dotify className="bg-primary px-6 py-3 rounded-lg">
+              <span style={{ color: '#F9FAFB' }}>Recodable</span>
+            </Dotify>
           </h1>
 
-          <p className="px-4 py-2 text-2xl font-light text-gray-400 bg-gray-100 rounded-lg">
+          <p className="bg-white px-4 py-2 text-2xl font-light text-gray-500 rounded-lg">
             Independent development team that crafts
             <br />
             beautiful web and mobile products for amazing clients.
@@ -38,10 +56,12 @@ export default () => {
 
       <Container>
         <h2
-          className="py-10 text-5xl font-semibold text-gray-700 rounded-lg"
-          style={{ fontFamily: "'Kanit', sans-serif" }}
+          className="py-10 text-5xl font-semibold text-gray-700 rounded-lg "
+          style={{ fontFamily: "'Roboto', sans-serif" }}
         >
-          Our latest posts.
+          <Dotify size={10}>
+            <span className="">Our latest posts</span>
+          </Dotify>
         </h2>
 
         <ol className="grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
@@ -54,7 +74,9 @@ export default () => {
 
         <div className="text-center py-16">
           <Link to="/blog">
-            <Button>Read more stories</Button>
+            <Button type="button" theme="primary">
+              Read more stories
+            </Button>
           </Link>
         </div>
       </Container>
@@ -62,7 +84,7 @@ export default () => {
       {/* <Container>
         <h2
           className="py-10 text-5xl font-semibold text-gray-700 rounded-lg"
-          style={{ fontFamily: "'Kanit', sans-serif" }}
+          style={{ fontFamily: "'Roboto', sans-serif" }}
         >
           Like an open (source) book.
         </h2>
@@ -77,10 +99,12 @@ export default () => {
         <div className="text-center">
           <div>
             <h2
-              className="py-4 text-5xl font-semibold text-gray-700 rounded-lg"
-              style={{ fontFamily: "'Kanit', sans-serif" }}
+              className="py-4 text-5xl font-semibold text-gray-700 rounded-lg text-center"
+              style={{ fontFamily: "'Roboto', sans-serif" }}
             >
-              Write us a message.
+              <Dotify className="justify-center" size={10}>
+                Write us a message
+              </Dotify>
             </h2>
 
             <p className="text-gray-500 text-xl">
@@ -92,7 +116,7 @@ export default () => {
           <div className="py-16">
             <a
               href="mailto:hello@recodable.io"
-              className="text-gray-700 hover:text-gray-500 text-5xl font-bold"
+              className="text-gray-700 hover:text-primary text-3xl font-bold border-b-4 hover:border-primary border-dashed"
             >
               hello@recodable.io
             </a>
@@ -106,7 +130,7 @@ export default () => {
 function Container({ className, children, ...forwardedProps }) {
   return (
     <div
-      className={`bg-gray-100 relative overflow-hidden pb-24 ${className}`}
+      className={`relative overflow-hidden pb-24 ${className}`}
       {...forwardedProps}
     >
       <div className="mx-auto" style={{ width: '1024px' }}>

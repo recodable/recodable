@@ -16,7 +16,7 @@ export default () => {
         <div>
           <h2
             className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl"
-            style={{ fontFamily: "'Kanit', sans-serif" }}
+            style={{ fontFamily: "'Roboto', sans-serif" }}
           >
             Sharing is caring.
           </h2>
