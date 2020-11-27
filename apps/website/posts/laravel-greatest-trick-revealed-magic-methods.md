@@ -68,9 +68,9 @@ Today, we will not dive in all of them, but only the interesting ones used acros
 
 [PHP Magic Methods](https://www.php.net/manual/en/language.oop5.magic.php)
 
-# How Laravel uses magic methods
+## How Laravel uses magic methods
 
-## `__get()`
+### `__get()`
 
 The models in Laravel are really special. They don't store the attributes data as direct attributes of the class but in an attribute `protected $attributes` , which is an associative array of all the data the model is holding.
 
@@ -183,7 +183,7 @@ There is way more things happening behind the scene. If you want to dig more how
 
 [laravel/framework](https://github.com/laravel/framework/blob/0207d73d7daae2f5902a76136780324b0cdfbb1c/src/Illuminate/Database/Eloquent/Model.php#L1519)
 
-## `__set()`
+### `__set()`
 
 The magic method `__set` is used when the attribute trying to be set is not declared in the class. Let's see the difference again between a normal PHP class and a model in Laravel.
 
@@ -265,7 +265,7 @@ Again, if you want to dig more, here the link to the source code
 
 Let's move on to the last and most interesting case! 🙌
 
-## `__call()` & `__callStatic()`
+### `__call()` & `__callStatic()`
 
 `__call` is executed when a method was called but not found in a specific class. In Laravel, this magic method is what is making macros possible in PHP.
 
@@ -355,7 +355,7 @@ Again if you want to dig a little bit more on your own, here is the `Macroable` 
 
 [laravel/framework](https://github.com/laravel/framework/blob/e6c8aa0e39d8f91068ad1c299546536e9f25ef63/src/Illuminate/Support/Traits/Macroable.php)
 
-# Final take
+## Final take
 
 Here you go Ladies and Gentlemen, while it is somewhat true that Laravel feels "magic when you first start using it, by looking into the source code itself, you can understand how the "magic" operate behind the scene.
 
