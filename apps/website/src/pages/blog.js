@@ -3,6 +3,7 @@ import { useRouteData } from 'react-static';
 import { Link } from 'react-router-dom';
 import Blogpost from '../components/Blogpost';
 import Button from '../components/Button';
+import Dotify from '../components/Dotify';
 
 export default () => {
   const { posts } = useRouteData();
@@ -18,7 +19,7 @@ export default () => {
             className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl"
             style={{ fontFamily: "'Roboto', sans-serif" }}
           >
-            Sharing is caring.
+            <Dotify size={8}>Sharing is caring</Dotify>
           </h2>
           <div className="mt-3 sm:mt-4">
             <p className="text-xl text-gray-500">

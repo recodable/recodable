@@ -4,23 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { useRouteData } from 'react-static';
 import StackList from '../components/StackList';
-
-function Dotify({ children, size = 15, className = '' }) {
-  return (
-    <span className={`flex items-baseline ${className}`}>
-      {children}
-
-      <span
-        style={{
-          width: `${size}px`,
-          height: `${size}px`,
-          marginLeft: `${Math.round(size / 10)}px`,
-        }}
-        className="bg-gradient-to-r from-orange-400 to-orange-500 rounded-full"
-      />
-    </span>
-  );
-}
+import Dotify from '../components/Dotify';
 
 export default () => {
   const { posts } = useRouteData();
@@ -42,7 +26,7 @@ export default () => {
             </Dotify>
           </h1>
 
-          <p className="bg-white px-4 py-2 text-2xl font-light text-gray-500 rounded-lg">
+          <p className="bg-white px-4 py-2 text-2xl font-light text-gray-600 rounded-lg">
             Independent development team that crafts
             <br />
             beautiful web and mobile products for amazing clients.

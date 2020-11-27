@@ -24,7 +24,7 @@ export default function Blogpost({ title, description, slug, publishedAt }) {
 
       <div className="mt-3">
         <Link to={`/blog/${slug}`}>
-          <a className="text-base font-semibold text-accent-600 hover:text-accent-500">
+          <a className="text-base font-semibold text-accent-400 hover:text-accent-500">
             Read full story
           </a>
         </Link>

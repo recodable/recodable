@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 const themes = {
-  primary: 'bg-primary hover:bg-primary focus:ring-primary',
+  primary: 'bg-primary hover:bg-blue-500 focus:ring-500',
   accent: 'bg-accent-600 hover:bg-accent-700 focus:ring-accent-500',
   DEFAULT: 'bg-gray-600 hover:bg-gray-700 focus:ring-gray-500',
 };

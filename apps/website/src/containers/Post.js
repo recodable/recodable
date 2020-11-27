@@ -56,7 +56,7 @@ export default function Post() {
         className="bg-white pt-16 px-4 sm:px-6 lg:pt-24 lg:px-8 mx-auto prose"
         style={{ maxWidth: '700px' }}
       >
-        <h1 className="prose lg:prose-xl">{title}</h1>
+        <h1>{title}</h1>
 
         <div dangerouslySetInnerHTML={{ __html: contents }} />
       </article>
