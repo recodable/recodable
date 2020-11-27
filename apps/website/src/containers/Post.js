@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRouteData } from 'react-static';
-import { Link } from 'react-router-dom';
+import { Head } from 'react-static';
+import 'highlight.js/styles/night-owl.css';
 
 export default function Post() {
-  const { post } = useRouteData();
+  const { title, contents } = useRouteData();
+
   return (
-    <div>
-      <Link to="/blog/">{'<'} Back</Link>
-      <br />
-      <h3>{post.title}</h3>
-      <p>{post.body}</p>
-    </div>
+    <article
+      className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 mx-auto prose lg:prose-xl"
+      style={{ maxWidth: '700px' }}
+    >
+      <h1 className="prose lg:prose-xl">{title}</h1>
+
+      <div dangerouslySetInnerHTML={{ __html: contents }} />
+    </article>
   );
 }

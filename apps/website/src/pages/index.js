@@ -1,4 +1,7 @@
 import React from 'react';
+import Blogpost from '../components/Blogpost';
+import { Link } from 'react-router-dom';
+import Button from '../components/Button';
 
 export default () => {
   return (
@@ -54,12 +57,11 @@ export default () => {
         </ol>
 
         <div className="text-center py-16">
-          <button
-            type="button"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-semibold rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-          >
-            Read more stories
-          </button>
+          <Link to="/blog">
+            <a>
+              <Button>Read more stories</Button>
+            </a>
+          </Link>
         </div>
       </Container>
 
@@ -95,7 +97,10 @@ export default () => {
 
 function Container({ className, children, ...forwardedProps }) {
   return (
-    <div className={`bg-gray-100 relative overflow-hidden pb-24 ${className}`} {...forwardedProps}>
+    <div
+      className={`bg-gray-100 relative overflow-hidden pb-24 ${className}`}
+      {...forwardedProps}
+    >
       <div className="mx-auto" style={{ width: '1024px' }}>
         {children}
       </div>
@@ -109,34 +114,5 @@ function Pattern({ className, ...forwardedProps }) {
       {...forwardedProps}
       className={`pattern w-96 h-96 absolute z-0 my-10 ${className}`}
     />
-  );
-}
-
-function Blogpost() {
-  return (
-    <div>
-      <p className="text-sm text-gray-500">
-        <time dateTime="2020-03-16">Mar 16, 2020</time>
-      </p>
-      <a href="#" className="mt-2 block">
-        <p className="text-xl font-semibold text-gray-900">
-          Boost your conversion rate
-        </p>
-        <p className="mt-3 text-base text-gray-500">
-          Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam
-          vitae illo. Non aliquid explicabo necessitatibus unde. Sed
-          exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti
-          dicta.
-        </p>
-      </a>
-      <div className="mt-3">
-        <a
-          href="#"
-          className="text-base font-semibold text-gray-600 hover:text-gray-500"
-        >
-          Read full story
-        </a>
-      </div>
-    </div>
   );
 }
