@@ -8,7 +8,7 @@ export default function Post() {
 
   return (
     <article
-      className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 mx-auto prose lg:prose-xl"
+      className="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8 mx-auto prose"
       style={{ maxWidth: '700px' }}
     >
       <h1 className="prose lg:prose-xl">{title}</h1>
