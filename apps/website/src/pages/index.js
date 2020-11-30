@@ -20,12 +20,12 @@ export default () => {
 
         <div className="relative py-16 lg:py-32 px-4 sm:px-20 z-10 flex flex-col items-start">
           <h1
-            className="bg-white text-5xl sm:text-7xl lg:text-8xl font-extrabold mb-6 text-gray-700 rounded-lg px-4 py-2"
+            className="text-5xl sm:text-7xl lg:text-8xl font-extrabold mb-6 text-gray-700 rounded-lg px-4 py-2"
             style={{ fontFamily: "'Roboto', sans-serif" }}
           >
-            We are
+            <span className="bg-white">We are</span>
             <br />
-            <Dotify className="bg-primary px-3 py-1 sm:px-6 sm:py-3 rounded-lg">
+            <Dotify className="mt-1 sm:mt-2 bg-primary px-3 py-1 sm:px-6 sm:py-3 rounded-lg">
               <span style={{ color: '#F9FAFB' }}>Recodable</span>
             </Dotify>
           </h1>
