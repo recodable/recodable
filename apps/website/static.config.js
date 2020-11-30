@@ -5,6 +5,7 @@ export default {
   getSiteData: () => ({
     title: 'Recodable - independant development team',
   }),
+
   getRoutes: async () => {
     const posts = await jdown('posts', {
       markdown: {
@@ -45,12 +46,11 @@ export default {
       },
     ];
   },
+
   plugins: [
     [
       require.resolve('react-static-plugin-source-filesystem'),
-      {
-        location: path.resolve('./src/pages'),
-      },
+      { location: path.resolve('./src/pages') },
     ],
     [
       'react-static-plugin-react-router',

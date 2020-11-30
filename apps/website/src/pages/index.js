@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Blogpost from '../components/Blogpost';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { useRouteData } from 'react-static';
 import StackList from '../components/StackList';
 import Dotify from '../components/Dotify';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export default () => {
   const { posts } = useRouteData();
@@ -98,12 +99,7 @@ export default () => {
           </div>
 
           <div className="py-16">
-            <a
-              href="mailto:hello@recodable.io"
-              className="text-gray-700 hover:text-primary text-3xl font-bold border-b-4 hover:border-primary border-dashed"
-            >
-              hello@recodable.io
-            </a>
+            <CopiableEmail />
           </div>
         </div>
       </Container>
@@ -113,14 +109,14 @@ export default () => {
 
 function Container({ className, children, ...forwardedProps }) {
   return (
-    <div
+    <section
       className={`relative overflow-hidden pb-24 ${className}`}
       {...forwardedProps}
     >
       <div className="mx-auto" style={{ width: '1024px' }}>
         {children}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -130,5 +126,34 @@ function Pattern({ className, ...forwardedProps }) {
       {...forwardedProps}
       className={`pattern w-96 h-96 absolute z-0 my-10 ${className}`}
     />
+  );
+}
+
+function CopiableEmail() {
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (copied) {
+      const timeout = setTimeout(() => setCopied(false), 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [copied]);
+
+  return (
+    <div className="relative">
+      {copied && (
+        <div className="absolute top-0 left-0 right-0 -mt-6">
+          <span className="font-light text-sm text-primary">Copied!</span>
+        </div>
+      )}
+
+      <CopyToClipboard
+        text="hello@recodable.io"
+        className="text-gray-700 hover:text-primary text-3xl font-bold border-b-4 hover:border-primary border-dashed focus:outline-none active:outline-none"
+        onCopy={() => setCopied(true)}
+      >
+        <button type="button">hello@recodable.io</button>
+      </CopyToClipboard>
+    </div>
   );
 }
