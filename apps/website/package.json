@@ -5,7 +5,8 @@
     "stage": "react-static build --staging",
     "build": "react-static build",
     "analyze": "react-static build --analyze",
-    "serve": "serve dist -p 3000"
+    "serve": "serve dist -p 3000",
+    "deploy": "yarn build && netlify deploy"
   },
   "dependencies": {
     "autoprefixer": "^9",
@@ -37,6 +38,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^4.0.2",
     "jdown": "^1.0.4",
+    "netlify-cli": "^2.69.0",
     "postcss-cli": "^8.3.0",
     "serve": "^11.1.0"
   }

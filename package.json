@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "lerna run dev --stream",
     "build": "lerna run build --stream",
+    "deploy": "lerna run deploy --stream",
     "format": "prettier --write '**/*.{ts,tsx,js,jsx,css,html}'"
   },
   "devDependencies": {
