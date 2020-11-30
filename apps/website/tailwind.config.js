@@ -9,7 +9,14 @@ module.exports = {
       primary: colors.blue['500'],
       accent: colors.green,
     },
-    extend: {},
+    extend: {
+      width: {
+        'lg-screen': '1024px',
+      },
+      maxWidth: {
+        'lg-screen': '1024px',
+      },
+    },
   },
   variants: {
     extend: {},

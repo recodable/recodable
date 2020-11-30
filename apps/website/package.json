@@ -37,6 +37,7 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^4.0.2",
     "jdown": "^1.0.4",
+    "postcss-cli": "^8.3.0",
     "serve": "^11.1.0"
   }
 }

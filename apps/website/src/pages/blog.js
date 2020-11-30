@@ -19,7 +19,7 @@ export default () => {
             className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl"
             style={{ fontFamily: "'Roboto', sans-serif" }}
           >
-            <Dotify size={8}>Sharing is caring</Dotify>
+            <Dotify size={2}>Sharing is caring</Dotify>
           </h2>
           <div className="mt-3 sm:mt-4">
             <p className="text-xl text-gray-500">
