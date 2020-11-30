@@ -16,7 +16,11 @@ function NewsletterSection() {
             </p>
           </div>
           <div className="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
-            <form className="sm:flex">
+            <form
+              action="https://recodable.substack.com/api/v1/free?nojs=true"
+              method="POST"
+              className="sm:flex"
+            >
               <label for="emailAddress" className="sr-only">
                 Email address
               </label>
@@ -26,6 +30,7 @@ function NewsletterSection() {
                 required
                 className="w-full border-white px-5 py-3 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-700 focus:ring-white rounded-md"
                 placeholder="Enter your email"
+                name="email"
               />
               <button
                 type="submit"
