@@ -3,6 +3,9 @@ title: 'Laravel Greatest Trick Revealed: Magic Methods'
 slug: laravel-greatest-trick-revealed-magic-methods
 description: Laravel has leverage PHP to a whole new level, providing awesome Developer Experience (DX) to craft your next project. As a result, some people qualify it as "magic". Today, I will reveal to you one of Laravel tricks, magic methods.
 publishedAt: 2019-04-11
+author:
+  name: Steven Yung
+  url: https://twitter.com/hyiuen
 cover:
   url: /laravel-greatest-trick-revealed-magic-methods.jpg
   credit:

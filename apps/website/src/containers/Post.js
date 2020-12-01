@@ -1,6 +1,54 @@
 import React, { useEffect } from 'react';
 import { Head, useRouteData } from 'react-static';
+import { format } from 'date-fns';
 import 'highlight.js/styles/night-owl.css';
+
+export default function Post() {
+  const { title, author, publishedAt, contents } = useRouteData();
+
+  return (
+    <>
+      <Head>
+        <title>{title} - The Recodable Blog</title>
+      </Head>
+
+      <article
+        className="bg-white pt-16 px-4 sm:px-6 lg:pt-24 lg:px-8 mx-auto"
+        style={{ maxWidth: '700px' }}
+      >
+        <div className="prose">
+          <h1>{title}</h1>
+        </div>
+
+        <div className="py-6">
+          <div className="flex items-center">
+            <span className="text-sm font-medium text-gray-900 hover:text-accent-400">
+              <a href={author.url} className="hover:underline">
+                {author.name}
+              </a>
+            </span>
+
+            <span className="mx-2" aria-hidden="true">
+              &middot;
+            </span>
+
+            <div className="text-sm text-gray-500">
+              <time datetime={publishedAt}>
+                {format(new Date(publishedAt), 'MMM d, y')}
+              </time>
+              {/* <span aria-hidden="true">&middot;</span>
+                <span>6 min read</span> */}
+            </div>
+          </div>
+        </div>
+
+        <div className="prose" dangerouslySetInnerHTML={{ __html: contents }} />
+      </article>
+
+      <NewsletterSection />
+    </>
+  );
+}
 
 function NewsletterSection() {
   return (
@@ -49,28 +97,5 @@ function NewsletterSection() {
         </div>
       </div>
     </div>
-  );
-}
-
-export default function Post() {
-  const { title, contents } = useRouteData();
-
-  return (
-    <>
-      <Head>
-        <title>{title} - The Recodable Blog</title>
-      </Head>
-
-      <article
-        className="bg-white pt-16 px-4 sm:px-6 lg:pt-24 lg:px-8 mx-auto prose prose-green"
-        style={{ maxWidth: '700px' }}
-      >
-        <h1>{title}</h1>
-
-        <div dangerouslySetInnerHTML={{ __html: contents }} />
-      </article>
-
-      <NewsletterSection />
-    </>
   );
 }

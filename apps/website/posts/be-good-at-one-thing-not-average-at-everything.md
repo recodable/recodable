@@ -3,6 +3,9 @@ title: Be good at one thing, not average at everything
 slug: be-good-at-one-thing-not-average-at-everything
 description: The web is constantly evolving and improving over time and there is already so much to learn and much more as time goes by. For any newcomers, this is pretty scary, and it becomes quickly overwhelming.
 publishedAt: 2018-01-10
+author:
+  name: Steven Yung
+  url: https://twitter.com/hyiuen
 cover:
   url: /be-good-at-one-thing-not-average-at-everything.jpg
   credit:
