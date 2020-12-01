@@ -16,6 +16,23 @@ module.exports = {
       maxWidth: {
         'lg-screen': '1024px',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.accent.400'),
+              '&:hover': {
+                color: theme('colors.accent.500'),
+              },
+            },
+
+            code: {
+              backgroundColor: theme('colors.blue.100'),
+              color: theme('colors.primary'),
+            },
+          },
+        },
+      }),
     },
   },
   variants: {
