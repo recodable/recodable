@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useRouteData } from 'react-static';
+import { Head, useRouteData } from 'react-static';
 import 'highlight.js/styles/night-owl.css';
 
 function NewsletterSection() {
@@ -57,6 +57,10 @@ export default function Post() {
 
   return (
     <>
+      <Head>
+        <title>{title} - The Recodable Blog</title>
+      </Head>
+
       <article
         className="bg-white pt-16 px-4 sm:px-6 lg:pt-24 lg:px-8 mx-auto prose prose-green"
         style={{ maxWidth: '700px' }}
