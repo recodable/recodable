@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { useRouteData } from 'react-static';
 import StackList from '../components/StackList';
-import Dotify from '../components/Dotify';
+import { Dot } from '../components/Dotify';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import SectionTitle from '../components/SectionTitle';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default () => {
   const { posts } = useRouteData();
@@ -14,9 +15,7 @@ export default () => {
   return (
     <div>
       <Container>
-        <div className="pattern absolute z-0 inset-0 lg:hidden" />
-
-        <div className="hidden pattern w-96 h-96 absolute z-0 bottom-0 left-0 lg:block" />
+        <Pattern className="hidden w-96 h-96 absolute z-0 bottom-0 left-0 lg:block" />
 
         <div className="relative py-16 lg:py-32 px-4 sm:px-20 z-10 flex flex-col items-start">
           <h1
@@ -25,9 +24,31 @@ export default () => {
           >
             <span className="bg-white">We are</span>
             <br />
-            <Dotify className="mt-1 sm:mt-2 bg-primary px-3 py-1 sm:px-6 sm:py-3 rounded-lg">
-              <span style={{ color: '#F9FAFB' }}>Recodable</span>
-            </Dotify>
+            <motion.div>
+              <motion.div className="relative mt-1 sm:mt-2 px-3 py-1 sm:px-6 sm:py-3 flex items-baseline">
+                <motion.div
+                  className="bg-primary absolute top-0 bottom-0 left-0 z-10 rounded-lg overflow-hidden z-10"
+                  initial={{ width: '0%' }}
+                  animate={{ width: '100%' }}
+                  transition={{
+                    type: 'spring',
+                    bounce: 0.2,
+                    delay: 0.4,
+                    damping: 15,
+                  }}
+                >
+                  <div className="flex items-baseline px-3 py-1 sm:px-6 sm:py-3 ">
+                    <span style={{ color: '#F9FAFB' }}>Recodable</span>
+
+                    <Dot />
+                  </div>
+                </motion.div>
+
+                <span>Recodable</span>
+
+                <Dot colorClassName="bg-white" />
+              </motion.div>
+            </motion.div>
           </h1>
 
           <div className="bg-white">
@@ -39,9 +60,11 @@ export default () => {
 
             <StackList />
           </div>
+
+          <Pattern className="lg:hidden w-full h-24" />
         </div>
 
-        <div className="hidden pattern absolute w-96 h-96 z-0 top-0 right-0 lg:block" />
+        <Pattern className="hidden absolute w-96 h-96 z-0 top-0 right-0 lg:block" />
       </Container>
 
       <Container className="px-4">
@@ -111,14 +134,38 @@ function Container({ className, children, ...forwardedProps }) {
   );
 }
 
-// function Pattern({ className, ...forwardedProps }) {
-//   return (
-//     <div
-//       {...forwardedProps}
-//       className={`pattern w-96 h-96 absolute z-0 my-10 ${className}`}
-//     />
-//   );
-// }
+function Pattern({ className, ...forwardedProps }) {
+  return (
+    <motion.svg
+      // viewBox="0 0 52 26"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`text-primary fill-current ${className}`}
+      {...forwardedProps}
+    >
+      <defs>
+        <pattern
+          id="wiggle"
+          x="0"
+          y="0"
+          width={52}
+          height={26}
+          patternUnits="userSpaceOnUse"
+        >
+          <motion.path
+            d="M10 10c0-2.21-1.79-4-4-4a6 6 0 01-6-6h2c0 2.21 1.79 4 4 4a6 6 0 016 6c0 2.21 1.79 4 4 4a6 6 0 016 6c0 2.21 1.79 4 4 4v2a6 6 0 01-6-6c0-2.21-1.79-4-4-4a6 6 0 01-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z"
+            fill="currentColor"
+            fillRule="evenodd"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ opacity: { duration: 1 } }}
+          />
+        </pattern>
+      </defs>
+
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#wiggle)"></rect>
+    </motion.svg>
+  );
+}
 
 function CopiableEmail() {
   const [copied, setCopied] = useState(false);
@@ -132,15 +179,22 @@ function CopiableEmail() {
 
   return (
     <div className="relative">
-      {copied && (
-        <div className="absolute top-0 left-0 right-0 -mt-6">
-          <span className="font-light text-xs text-primary">Copied!</span>
-        </div>
-      )}
+      <AnimatePresence>
+        {copied && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            className="absolute top-0 left-0 right-0 -mt-6"
+          >
+            <span className="font-light text-xs text-primary">Copied!</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <CopyToClipboard
         text="hello@recodable.io"
-        className="text-gray-700 hover:text-primary text-2xl sm:text-3xl font-bold border-b-4 hover:border-primary border-dashed focus:outline-none active:outline-none"
+        className="text-gray-700 text-2xl sm:text-3xl font-bold border-b-4 hover:border-primary border-dashed focus:outline-none active:outline-none hover:text-primary "
         onCopy={() => setCopied(true)}
       >
         <button type="button">hello@recodable.io</button>

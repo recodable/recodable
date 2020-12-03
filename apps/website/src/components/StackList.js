@@ -7,6 +7,7 @@ import LaravelIcon from '../components/LaravelIcon';
 import NestIcon from '../components/NestIcon';
 import NodeIcon from '../components/NodeIcon';
 import TailwindIcon from '../components/TailwindIcon';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const items = [
   { name: 'React.js', IconComponent: ReactIcon },
@@ -57,7 +58,17 @@ function StackList() {
 
       <span className="px-2 md:px-0 text-sm sm:text-md font-thin sm:font-light text-gray-500">
         We ❤️ to work with{' '}
-        <span className="font-medium text-primary">{selectedItem.name}</span>
+        <AnimatePresence exitBeforeEnter>
+          <motion.span
+            key={selectedItem.name}
+            className="font-medium text-primary"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {selectedItem.name}
+          </motion.span>
+        </AnimatePresence>
       </span>
     </div>
   );

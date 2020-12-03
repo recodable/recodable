@@ -10,10 +10,14 @@ const sizes = {
   4: 'sm:w-4 sm:h-4 ml-1 w-2.5 h-2.5',
 };
 
-function Dot({ size }) {
+function Dot({
+  size = 4,
+  className = '',
+  colorClassName = 'bg-gradient-to-r from-green-300 to-green-400',
+}) {
   return (
     <span
-      className={`bg-gradient-to-r from-green-300 to-green-400 rounded-full ${sizes[size]}`}
+      className={`${colorClassName} rounded-full ${sizes[size]} ${className}`}
     />
   );
 }
