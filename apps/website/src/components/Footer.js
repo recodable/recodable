@@ -1,5 +1,6 @@
 import * as React from 'react';
 import RecodableIcon from './RecodableLogo';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -89,9 +90,9 @@ function Footer() {
           </a> */}
         </div>
         <div className="mt-8 md:mt-0 md:order-1">
-          <p className="text-center text-base text-gray-400">
+          <Link to="/" className="text-center text-base text-gray-400">
             <RecodableIcon className="h-8" />
-          </p>
+          </Link>
         </div>
       </div>
     </footer>

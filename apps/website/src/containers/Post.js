@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Head, useRouteData } from 'react-static';
 import { format } from 'date-fns';
 import 'highlight.js/styles/night-owl.css';
+import Navbar from '../components/Navbar';
 
 export default function Post() {
   const { title, author, publishedAt, contents } = useRouteData();
@@ -11,6 +12,8 @@ export default function Post() {
       <Head>
         <title>{title} - The Recodable Blog</title>
       </Head>
+
+      <Navbar />
 
       <article
         className="bg-white pt-16 px-4 sm:px-6 lg:pt-24 lg:px-8 mx-auto"
@@ -33,7 +36,7 @@ export default function Post() {
             </span>
 
             <div className="text-sm text-gray-500">
-              <time datetime={publishedAt}>
+              <time dateTime={publishedAt}>
                 {format(new Date(publishedAt), 'MMM d, y')}
               </time>
               {/* <span aria-hidden="true">&middot;</span>
