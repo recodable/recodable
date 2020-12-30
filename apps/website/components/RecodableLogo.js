@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-function SvgComponent(props) {
+function RecodableLogo(props) {
   return (
     <svg
       // width={508}
@@ -55,4 +55,4 @@ function SvgComponent(props) {
   );
 }
 
-export default SvgComponent;
+export default RecodableLogo;
