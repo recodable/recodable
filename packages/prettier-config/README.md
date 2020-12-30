@@ -5,7 +5,7 @@
 Install with:
 
 ```bash
-yarn add -D prettier @recodable/config
+yarn add -D prettier @recodable/prettier-config
 ```
 
 In `package.json`:
