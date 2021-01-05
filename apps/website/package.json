@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap --config sitemap.config.js",
     "start": "next start",
-    "export": "next export"
+    "export": "next export",
+    "deploy": "netlify deploy"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.2.1",
@@ -24,6 +26,7 @@
     "tailwindcss": "^2.0.1"
   },
   "devDependencies": {
-    "netlify-cli": "^2.69.2"
+    "netlify-cli": "^2.69.2",
+    "next-sitemap": "^1.3.29"
   }
 }
