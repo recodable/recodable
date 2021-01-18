@@ -91,7 +91,7 @@ export default function Home({ posts }) {
       </Container>
 
       <Container>
-        <div className="mb-28">
+        <div className="mb-8 px-4">
           <SectionTitle
           // className="py-10 text-5xl font-semibold text-gray-700 rounded-lg"
           // style={{ fontFamily: "'Roboto', sans-serif" }}
@@ -205,7 +205,7 @@ export async function getStaticProps(context) {
   };
 }
 
-function Container({ className, children, ...forwardedProps }) {
+function Container({ className = '', children, ...forwardedProps }) {
   return (
     <section
       className={`relative overflow-hidden pb-10 ${className}`}
