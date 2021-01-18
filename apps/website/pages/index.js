@@ -79,7 +79,7 @@ export default function Home({ posts }) {
           ))}
         </ol>
 
-        <div className="text-center py-10 sm:py-16">
+        <div className="text-center py-10 lg:py-16">
           <Link href="/blog">
             <a>
               <Button type="button" theme="primary">
@@ -90,8 +90,8 @@ export default function Home({ posts }) {
         </div>
       </Container>
 
-      <Container>
-        <div className="mb-8 px-4">
+      <Container className="mb-14">
+        <div className="mb-10 px-4">
           <SectionTitle
           // className="py-10 text-5xl font-semibold text-gray-700 rounded-lg"
           // style={{ fontFamily: "'Roboto', sans-serif" }}
@@ -105,7 +105,7 @@ export default function Home({ posts }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-20">
+        <div className="grid grid-cols-1 gap-8">
           <ProjectItem
             title="No More WhatsApp"
             description="Information website to learn how to get your data out of WhatsApp before you delete your account and read it back."

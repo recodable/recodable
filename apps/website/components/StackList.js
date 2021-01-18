@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ReactIcon from '../components/ReactIcon';
 import VueIcon from '../components/VueIcon';
 import ElectronIcon from '../components/ElectronIcon';
@@ -44,13 +44,13 @@ function StackList() {
           return (
             <li
               key={item.name}
-              className={`text-gray-500 hover:text-gray-700 cursor-pointer px-1 ${
-                selectedItem.name !== item.name ? 'grayscale' : ''
+              className={`text-gray-500 hover:text-gray-700 cursor-pointer rounded-lg p-2 ${
+                selectedItem.name !== item.name ? 'grayscale' : 'bg-blue-50 '
               }`}
               onMouseEnter={() => setSelected(item)}
               onMouseLeave={() => setSelected(null)}
             >
-              <IconComponent className="w-6 h-6 sm:w-7 sm:h-7" />
+              <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 " />
             </li>
           );
         })}
