@@ -1,13 +1,18 @@
 export default function ProjectItem({ reverse, ...forwardedProps }) {
   const children = [
     <ProjectDetails {...forwardedProps} />,
-    <ProjectIllustration {...forwardedProps} />,
+    <ProjectIllustration
+      className="border shadow-lg hidden lg:block"
+      {...forwardedProps}
+    />,
   ];
 
   if (reverse) children.reverse();
 
   return (
-    <div className="grid grid-cols-2 gap-12 bg-gray-50 p-8 rounded-lg">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-gray-50 p-8 lg:rounded-lg">
+      <ProjectIllustration className="lg:hidden" {...forwardedProps} />
+
       {children}
     </div>
   );
@@ -16,9 +21,11 @@ export default function ProjectItem({ reverse, ...forwardedProps }) {
 function ProjectDetails({ title, description, links, url, extras }) {
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex gap-4 items-baseline">
+      <div className="flex flex-col sm:flex-row gap-4 sm:items-baseline">
         <a href={url} target="_blank">
-          <h3 className="text-3xl font-semibold text-gray-700">{title}</h3>
+          <h3 className="text-2xl lg:text-3xl font-semibold text-gray-700">
+            {title}
+          </h3>
         </a>
 
         <div>{!!links && links.map((link) => <>{link}</>)}</div>
@@ -35,12 +42,12 @@ function ProjectDetails({ title, description, links, url, extras }) {
   );
 }
 
-function ProjectIllustration({ url, ...forwardedProps }) {
+function ProjectIllustration({ url, className = '', ...forwardedProps }) {
   return (
     <a
       href={url}
       target="_blank"
-      className="w-full border shadow-lg rounded-lg overflow-hidden"
+      className={`w-full rounded-lg overflow-hidden ${className}`}
     >
       <img {...forwardedProps} />
     </a>
