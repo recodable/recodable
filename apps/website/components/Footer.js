@@ -42,6 +42,7 @@ function Footer() {
           <a
             href="https://twitter.com/recodable"
             className="text-gray-400 hover:text-primary"
+            target="_blank"
           >
             <span className="sr-only">Twitter</span>
             <svg
@@ -57,6 +58,7 @@ function Footer() {
           <a
             href="https://github.com/recodable"
             className="text-gray-400 hover:text-primary"
+            target="_blank"
           >
             <span className="sr-only">GitHub</span>
             <svg

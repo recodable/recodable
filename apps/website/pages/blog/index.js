@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useRouteData, Head } from 'react-static';
 import Blogpost from '../../components/Blogpost';
 import Dotify from '../../components/Dotify';
 import Navbar from '../../components/Navbar';

@@ -8,6 +8,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import SectionTitle from '../components/SectionTitle';
 import { AnimatePresence, motion } from 'framer-motion';
 import getPosts from '../utils/getPosts';
+import ProjectItem from '../components/ProjectItem';
 
 export default function Home({ posts }) {
   return (
@@ -25,7 +26,7 @@ export default function Home({ posts }) {
             <motion.div>
               <motion.div className="relative mt-1 sm:mt-2 px-3 py-1 sm:px-6 sm:py-3 flex items-baseline">
                 <motion.div
-                  className="bg-primary absolute top-0 bottom-0 left-0 z-10 rounded-lg overflow-hidden z-10"
+                  className="bg-primary absolute top-0 bottom-0 left-0 rounded-lg overflow-hidden z-10"
                   initial={{ width: '0%' }}
                   animate={{ width: '100%' }}
                   transition={{
@@ -89,19 +90,94 @@ export default function Home({ posts }) {
         </div>
       </Container>
 
-      {/* <Container>
-        <h2
-          className="py-10 text-5xl font-semibold text-gray-700 rounded-lg"
-          style={{ fontFamily: "'Roboto', sans-serif" }}
-        >
-          Like an open (source) book.
-        </h2>
+      <Container>
+        <div className="mb-28">
+          <SectionTitle
+          // className="py-10 text-5xl font-semibold text-gray-700 rounded-lg"
+          // style={{ fontFamily: "'Roboto', sans-serif" }}
+          >
+            Like an open (source) book
+          </SectionTitle>
 
-        <p className="text-2xl text-gray-400">
-          We create our app in the open
-          <br />& are proud contributors of the Open Source ecosystem
-        </p>
-      </Container> */}
+          <p className="text-2xl text-gray-400">
+            We create our app in the open
+            <br />& are proud contributors of the open source ecosystem
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-20">
+          <ProjectItem
+            title="No More WhatsApp"
+            description="Information website to learn how to get your data out of WhatsApp before you delete your account and read it back."
+            url="http://nomorewhatsapp.com/"
+            extras={[
+              <a
+                href="https://www.producthunt.com/posts/no-more-whatsapp?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-no-more-whatsapp"
+                target="_blank"
+              >
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=281124&theme=light"
+                  alt="No More WhatsApp - Learn how to export your data from WhatsApp. | Product Hunt"
+                  className="h-10"
+                />
+              </a>,
+            ]}
+            links={[
+              <a
+                href="https://github.com/recodable/react-headless-notifier"
+                target="_blank"
+                className="text-gray-400 hover:text-primary"
+              >
+                <span className="sr-only">GitHub</span>
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>,
+            ]}
+            src="/projects/nomorewhatsapp.png"
+            alt="No More WhatsApp screenshot"
+          />
+
+          <ProjectItem
+            reverse
+            title="React Headless Notifier"
+            description="React Headless Notifier is component library for building highly customizable notification system. This library is lightweight, and ultra-customizable, but do not render any markup or styles for you. This effectively means that React Headless Notifier is a headless UI library"
+            url="https://react-headless-notifier.recodable.io/"
+            links={[
+              <a
+                href="https://github.com/recodable/react-headless-notifier"
+                target="_blank"
+                className="text-gray-400 hover:text-primary"
+              >
+                <span className="sr-only">GitHub</span>
+                <svg
+                  className="h-6 w-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </a>,
+            ]}
+            src="/projects/react-headless-notifier.png"
+            alt="React Headless Notifier"
+          />
+        </div>
+      </Container>
 
       <Container className="px-4">
         <div className="text-center">
@@ -200,7 +276,7 @@ function CopiableEmail() {
 
       <CopyToClipboard
         text="hello@recodable.io"
-        className="text-gray-700 text-2xl sm:text-3xl font-bold border-b-4 hover:border-primary border-dashed focus:outline-none active:outline-none hover:text-primary "
+        className="text-gray-700 text-2xl sm:text-3xl font-bold border-b-4 hover:border-primary border-dashed focus:outline-none active:outline-none hover:text-primary"
         onCopy={() => setCopied(true)}
       >
         <button type="button">hello@recodable.io</button>
