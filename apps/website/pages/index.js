@@ -124,7 +124,7 @@ export default function Home({ posts }) {
             ]}
             links={[
               <a
-                href="https://github.com/recodable/react-headless-notifier"
+                href="https://github.com/recodable/nomorewhatsapp"
                 target="_blank"
                 className="text-gray-400 hover:text-primary"
               >
