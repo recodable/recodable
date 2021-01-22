@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import 'highlight.js/styles/night-owl.css';
 import Navbar from '../../components/Navbar';
 import getPosts from '../../utils/getPosts';
+import Image from 'next/image';
 
 export default function Post({ title, author, publishedAt, contents }) {
   return (
@@ -22,16 +23,26 @@ export default function Post({ title, author, publishedAt, contents }) {
         </div>
 
         <div className="py-6">
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
+            <a
+              href={author.url}
+              className="border-2 border-blue-500 rounded-full w-8 h-8 overflow-hidden"
+            >
+              <Image
+                src={author.image}
+                alt={author.name}
+                width={32}
+                height={32}
+              />
+            </a>
+
             <span className="text-sm font-medium text-gray-900 hover:text-accent-400">
               <a href={author.url} className="hover:underline">
                 {author.name}
               </a>
             </span>
 
-            <span className="mx-2" aria-hidden="true">
-              &middot;
-            </span>
+            <span aria-hidden="true">&middot;</span>
 
             <div className="text-sm text-gray-500">
               <time dateTime={publishedAt}>

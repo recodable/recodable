@@ -6,6 +6,7 @@ publishedAt: 2018-01-10
 author:
   name: Steven Yung
   url: https://twitter.com/hyiuen
+  image: /teams/steven.jpg
 cover:
   url: /be-good-at-one-thing-not-average-at-everything.jpg
   credit:

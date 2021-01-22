@@ -6,6 +6,7 @@ publishedAt: 2019-04-11
 author:
   name: Steven Yung
   url: https://twitter.com/hyiuen
+  image: /teams/steven.jpg
 cover:
   url: /laravel-greatest-trick-revealed-magic-methods.jpg
   credit:
