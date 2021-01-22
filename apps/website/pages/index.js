@@ -92,14 +92,9 @@ export default function Home({ posts }) {
 
       <Container className="mb-14">
         <div className="mb-10 px-4">
-          <SectionTitle
-          // className="py-10 text-5xl font-semibold text-gray-700 rounded-lg"
-          // style={{ fontFamily: "'Roboto', sans-serif" }}
-          >
-            Like an open (source) book
-          </SectionTitle>
+          <SectionTitle>Like an open (source) book</SectionTitle>
 
-          <p className="text-2xl text-gray-400">
+          <p className="sm:text-xl text-gray-400">
             We create our app in the open
             <br />& are proud contributors of the open source ecosystem
           </p>

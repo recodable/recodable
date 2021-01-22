@@ -118,12 +118,12 @@ function NewsletterSection() {
                 Notify me
               </button>
             </form>
-            <p className="mt-3 text-sm text-blue-200">
+            {/* <p className="mt-3 text-sm text-blue-200">
               We care about the protection of your data. Read our{' '}
               <a href="#" className="text-green-400 font-medium underline">
                 Privacy Policy.
               </a>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

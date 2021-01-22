@@ -93,7 +93,7 @@ function Footer() {
         </div>
         <div className="mt-8 md:mt-0 md:order-1">
           <Link href="/" className="text-center text-base text-gray-400">
-            <a>
+            <a className="flex justify-center">
               <RecodableIcon className="h-8" />
             </a>
           </Link>

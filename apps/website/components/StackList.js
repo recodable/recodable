@@ -50,7 +50,7 @@ function StackList() {
               onMouseEnter={() => setSelected(item)}
               onMouseLeave={() => setSelected(null)}
             >
-              <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 " />
+              <IconComponent className="w-5 h-5 sm:w-7 sm:h-7 " />
             </li>
           );
         })}
