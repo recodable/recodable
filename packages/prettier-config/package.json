@@ -1,6 +1,6 @@
 {
   "name": "@recodable/prettier-config",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Recodable's Prettier configuration shared across all projects",
   "main": "index.js",
   "keywords": [
