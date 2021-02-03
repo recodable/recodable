@@ -8,8 +8,10 @@ import NestIcon from '../components/NestIcon';
 import NodeIcon from '../components/NodeIcon';
 import TailwindIcon from '../components/TailwindIcon';
 import { AnimatePresence, motion } from 'framer-motion';
+import SvelteIcon from "../components/SvelteIcon"
 
 const items = [
+  { name: 'Svelte', IconComponent: SvelteIcon },
   { name: 'React.js', IconComponent: ReactIcon },
   { name: 'Vue.js', IconComponent: VueIcon },
   { name: 'Electron', IconComponent: ElectronIcon },
