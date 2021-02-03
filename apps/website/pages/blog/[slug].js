@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import { format } from 'date-fns';
-import 'highlight.js/styles/night-owl.css';
-import Navbar from '../../components/Navbar';
-import getPosts from '../../utils/getPosts';
-import Image from 'next/image';
+import Head from 'next/head'
+import { format } from 'date-fns'
+import 'highlight.js/styles/night-owl.css'
+import Navbar from '../../components/Navbar'
+import getPosts from '../../utils/getPosts'
+// import Image from 'next/image';
 
 export default function Post({ title, author, publishedAt, contents }) {
   return (
@@ -24,7 +24,7 @@ export default function Post({ title, author, publishedAt, contents }) {
 
         <div className="py-6">
           <div className="flex items-center gap-2">
-            <a
+            {/* <a
               href={author.url}
               className="border-2 border-blue-500 rounded-full w-8 h-8 overflow-hidden"
             >
@@ -34,7 +34,7 @@ export default function Post({ title, author, publishedAt, contents }) {
                 width={32}
                 height={32}
               />
-            </a>
+            </a> */}
 
             <span className="text-sm font-medium text-gray-900 hover:text-accent-400">
               <a href={author.url} className="hover:underline">
@@ -59,26 +59,26 @@ export default function Post({ title, author, publishedAt, contents }) {
 
       <NewsletterSection />
     </>
-  );
+  )
 }
 
 export async function getStaticProps({ params }) {
-  const posts = await getPosts();
-  const post = posts.find((post) => post.slug === params.slug);
-  return { props: { ...post } };
+  const posts = await getPosts()
+  const post = posts.find((post) => post.slug === params.slug)
+  return { props: { ...post } }
 }
 
 export async function getStaticPaths() {
-  const posts = await getPosts();
+  const posts = await getPosts()
 
   return {
     paths: posts.map(({ slug }) => {
       return {
         params: { slug },
-      };
+      }
     }),
     fallback: false,
-  };
+  }
 }
 
 function NewsletterSection() {
@@ -128,5 +128,5 @@ function NewsletterSection() {
         </div>
       </div>
     </div>
-  );
+  )
 }
