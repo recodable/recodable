@@ -1,9 +1,9 @@
-import React from 'react';
-import Blogpost from '../../components/Blogpost';
-import Dotify from '../../components/Dotify';
-import Navbar from '../../components/Navbar';
-import getPosts from '../../utils/getPosts';
-import Head from 'next/head';
+import React from 'react'
+import Blogpost from '../../components/Blogpost'
+import Dotify from '../../components/Dotify'
+import Navbar from '../../components/Navbar'
+import getPosts from '../../utils/getPosts'
+import Head from 'next/head'
 
 export default function Blog({ posts }) {
   return (
@@ -51,7 +51,7 @@ export default function Blog({ posts }) {
 
           <div className="mt-6 pt-10 grid gap-16">
             {posts.map((post) => {
-              return <Blogpost {...post} />;
+              return <Blogpost {...post} />
             })}
           </div>
           {/* <div className="mt-10 text-center">
@@ -60,9 +60,9 @@ export default function Blog({ posts }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export async function getStaticProps(context) {
-  return { props: { posts: await getPosts() } };
+  return { props: { posts: await getPosts() } }
 }

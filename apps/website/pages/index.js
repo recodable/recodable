@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Blogpost from '../components/Blogpost';
-import Link from 'next/link';
-import Button from '../components/Button';
-import StackList from '../components/StackList';
-import { Dot } from '../components/Dotify';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import SectionTitle from '../components/SectionTitle';
-import { AnimatePresence, motion } from 'framer-motion';
-import getPosts from '../utils/getPosts';
-import ProjectItem from '../components/ProjectItem';
+import React, { useState, useEffect } from 'react'
+import Blogpost from '../components/Blogpost'
+import Link from 'next/link'
+import Button from '../components/Button'
+import StackList from '../components/StackList'
+import { Dot } from '../components/Dotify'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import SectionTitle from '../components/SectionTitle'
+import { AnimatePresence, motion } from 'framer-motion'
+import getPosts from '../utils/getPosts'
+import ProjectItem from '../components/ProjectItem'
 
 export default function Home({ posts }) {
   return (
@@ -191,13 +191,13 @@ export default function Home({ posts }) {
         </div>
       </Container>
     </div>
-  );
+  )
 }
 
 export async function getStaticProps(context) {
   return {
     props: { posts: await getPosts() },
-  };
+  }
 }
 
 function Container({ className = '', children, ...forwardedProps }) {
@@ -208,7 +208,7 @@ function Container({ className = '', children, ...forwardedProps }) {
     >
       <div className="mx-auto max-w-lg-screen w-full">{children}</div>
     </section>
-  );
+  )
 }
 
 function Pattern({ className, ...forwardedProps }) {
@@ -241,18 +241,18 @@ function Pattern({ className, ...forwardedProps }) {
 
       <rect x="0" y="0" width="100%" height="100%" fill="url(#wiggle)"></rect>
     </motion.svg>
-  );
+  )
 }
 
 function CopiableEmail() {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     if (copied) {
-      const timeout = setTimeout(() => setCopied(false), 1000);
-      return () => clearTimeout(timeout);
+      const timeout = setTimeout(() => setCopied(false), 1000)
+      return () => clearTimeout(timeout)
     }
-  }, [copied]);
+  }, [copied])
 
   return (
     <div className="relative">
@@ -277,5 +277,5 @@ function CopiableEmail() {
         <button type="button">hello@recodable.io</button>
       </CopyToClipboard>
     </div>
-  );
+  )
 }

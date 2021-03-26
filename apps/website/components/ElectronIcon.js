@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 function ElectronIcon(props) {
   return (
@@ -29,7 +29,7 @@ function ElectronIcon(props) {
         />
       </g>
     </svg>
-  );
+  )
 }
 
-export default ElectronIcon;
+export default ElectronIcon

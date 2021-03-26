@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 function NestIcon(props) {
   return (
@@ -13,7 +13,7 @@ function NestIcon(props) {
         fillRule="evenodd"
       />
     </svg>
-  );
+  )
 }
 
-export default NestIcon;
+export default NestIcon

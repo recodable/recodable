@@ -1,6 +1,6 @@
-import * as React from 'react';
-import RecodableIcon from './RecodableLogo';
-import Link from 'next/link';
+import * as React from 'react'
+import RecodableIcon from './RecodableLogo'
+import Link from 'next/link'
 
 function Footer() {
   return (
@@ -100,7 +100,7 @@ function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

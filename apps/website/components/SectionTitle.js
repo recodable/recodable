@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Dotify from './Dotify';
+import * as React from 'react'
+import Dotify from './Dotify'
 
 function SectionTitle({ children, className = '', centered }) {
   return (
@@ -11,7 +11,7 @@ function SectionTitle({ children, className = '', centered }) {
         {children}
       </Dotify>
     </h2>
-  );
+  )
 }
 
-export default SectionTitle;
+export default SectionTitle

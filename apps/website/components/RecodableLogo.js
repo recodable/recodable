@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 function RecodableLogo(props) {
   return (
@@ -52,7 +52,7 @@ function RecodableLogo(props) {
         </filter>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default RecodableLogo;
+export default RecodableLogo

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 function TailwindIcon(props) {
   return (
@@ -32,7 +32,7 @@ function TailwindIcon(props) {
         fill="url(#prefix__a)"
       />
     </svg>
-  );
+  )
 }
 
-export default TailwindIcon;
+export default TailwindIcon

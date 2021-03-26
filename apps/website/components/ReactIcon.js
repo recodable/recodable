@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 function ReactIcon(props) {
   return (
@@ -15,7 +15,7 @@ function ReactIcon(props) {
         <ellipse rx={11} ry={4.2} transform="rotate(120)" />
       </g>
     </svg>
-  );
+  )
 }
 
-export default ReactIcon;
+export default ReactIcon

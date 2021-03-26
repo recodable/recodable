@@ -1,6 +1,6 @@
-import * as React from 'react';
-import RecodableLogo from './RecodableLogo';
-import Link from 'next/link';
+import * as React from 'react'
+import RecodableLogo from './RecodableLogo'
+import Link from 'next/link'
 
 function Navbar() {
   return (
@@ -11,7 +11,7 @@ function Navbar() {
         </a>
       </Link>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

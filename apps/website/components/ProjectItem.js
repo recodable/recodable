@@ -5,9 +5,9 @@ export default function ProjectItem({ reverse, ...forwardedProps }) {
       className="border shadow-lg hidden lg:block"
       {...forwardedProps}
     />,
-  ];
+  ]
 
-  if (reverse) children.reverse();
+  if (reverse) children.reverse()
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-gray-50 p-8 lg:rounded-lg">
@@ -15,7 +15,7 @@ export default function ProjectItem({ reverse, ...forwardedProps }) {
 
       {children}
     </div>
-  );
+  )
 }
 
 function ProjectDetails({ title, description, links, url, extras }) {
@@ -39,7 +39,7 @@ function ProjectDetails({ title, description, links, url, extras }) {
         {!!extras && extras.map((link) => <>{link}</>)}
       </div>
     </div>
-  );
+  )
 }
 
 function ProjectIllustration({ url, className = '', ...forwardedProps }) {
@@ -51,5 +51,5 @@ function ProjectIllustration({ url, className = '', ...forwardedProps }) {
     >
       <img {...forwardedProps} />
     </a>
-  );
+  )
 }

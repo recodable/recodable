@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from 'react'
 
 const themes = {
   primary: 'bg-primary hover:bg-blue-600 focus:ring-600',
   accent: 'bg-accent-600 hover:bg-accent-700 focus:ring-accent-500',
   DEFAULT: 'bg-gray-600 hover:bg-gray-700 focus:ring-gray-500',
-};
+}
 
 export default function Button({ className = '', theme = null, children }) {
   return (
@@ -15,5 +15,5 @@ export default function Button({ className = '', theme = null, children }) {
     >
       {children}
     </button>
-  );
+  )
 }

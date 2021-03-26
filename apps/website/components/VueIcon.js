@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 function VueIcon(props) {
   return (
@@ -16,7 +16,7 @@ function VueIcon(props) {
         fill="#34495e"
       />
     </svg>
-  );
+  )
 }
 
-export default VueIcon;
+export default VueIcon

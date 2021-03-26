@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 function LaravelIcon(props) {
   return (
@@ -16,7 +16,7 @@ function LaravelIcon(props) {
         fillRule="evenodd"
       />
     </svg>
-  );
+  )
 }
 
-export default LaravelIcon;
+export default LaravelIcon

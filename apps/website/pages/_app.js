@@ -1,6 +1,6 @@
-import '../styles/index.css';
-import Head from 'next/head';
-import Footer from '../components/Footer';
+import '../styles/index.css'
+import Head from 'next/head'
+import Footer from '../components/Footer'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
 
       <div className="w-full h-2 bg-green-400" />
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { format } from 'date-fns';
+import React from 'react'
+import Link from 'next/link'
+import { format } from 'date-fns'
 
 export default function Blogpost({ title, description, slug, publishedAt }) {
   return (
@@ -30,5 +30,5 @@ export default function Blogpost({ title, description, slug, publishedAt }) {
         </Link>
       </div>
     </div>
-  );
+  )
 }

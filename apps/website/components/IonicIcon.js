@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 
 function IonicIcon(props) {
   return (
@@ -17,7 +17,7 @@ function IonicIcon(props) {
         fill="#4a8bfc"
       />
     </svg>
-  );
+  )
 }
 
-export default IonicIcon;
+export default IonicIcon
