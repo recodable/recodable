@@ -5,7 +5,7 @@ description: Laravel has leverage PHP to a whole new level, providing awesome De
 publishedAt: 2019-04-11
 author:
   name: Steven Yung
-  url: https://twitter.com/hyiuen
+  url: https://twitter.com/xstevenyung
   image: /teams/steven.jpg
 cover:
   url: /laravel-greatest-trick-revealed-magic-methods.jpg
