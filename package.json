@@ -1,17 +1,11 @@
 {
-  "name": "recodable",
-  "version": "0.0.0",
   "prettier": "@recodable/prettier-config",
   "scripts": {
-    "dev": "lerna run dev --stream",
-    "build": "lerna run build --stream",
-    "deploy": "lerna run deploy --stream",
+    "website": "pnpm --filter @recodable/website",
     "format": "prettier --write '**/*.{ts,tsx,js,jsx,css,html}'"
   },
   "devDependencies": {
     "@recodable/prettier-config": "./packages/prettier-config",
-    "lerna": "^3.22.1",
-    "prettier": "^2.2.0",
-    "react-static": "^7.4.2"
+    "prettier": "^2.2.0"
   }
 }
