@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
 Host: https://recodable.io
+
+# Sitemaps
 Sitemap: https://recodable.io/sitemap.xml

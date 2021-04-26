@@ -1,6 +1,5 @@
 {
   "name": "@recodable/website",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +7,8 @@
     "postbuild": "next-sitemap --config sitemap.config.js",
     "start": "next start",
     "export": "next export",
-    "deploy": "netlify deploy"
+    "deploy": "pnpm build && pnpm export && netlify deploy",
+    "deploy:prod": "pnpm build && pnpm export && netlify deploy --prod"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.2.1",
