@@ -104,7 +104,7 @@ export default function Home({ posts }) {
           <ProjectItem
             title="No More WhatsApp"
             description="Information website to learn how to get your data out of WhatsApp before you delete your account and read it back."
-            url="http://nomorewhatsapp.vercel.app/"
+            url="https://nomorewhatsapp.recodable.io/"
             extras={[
               <a
                 href="https://www.producthunt.com/posts/no-more-whatsapp?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-no-more-whatsapp"
